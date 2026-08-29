@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cleanframe – Professionelle Websites für kleine und mittlere Unternehmen</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="Cleanframe entwickelt professionelle, zeitgemässe Websites für Unternehmen. Klar gestaltet, responsive, ohne unnötigen Aufwand. Jetzt anfragen.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Cleanframe – Professionelle Websites für Unternehmen">
+<meta property="og:description" content="Cleanframe entwickelt professionelle, zeitgemässe Websites für Unternehmen. Klar gestaltet, responsive, ohne unnötigen Aufwand.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cleanframe.ch">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Newsreader:ital@1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0A0A0A;
+    --white: #FAFAF8;
+    --gray-mid: #6E6E6B;
+    --gray-line: #DEDEDA;
+    --gray-faint: #F1F1EE;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--white);
+    color: var(--black);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Manrope', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .rule {
+    border: none;
+    border-top: 1px solid var(--gray-line);
+  }
+
+  section { padding: 96px 0; }
+
+  @media (max-width: 640px) {
+    section { padding: 64px 0; }
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    padding: 28px 0;
+  }
+  header .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .logo-bracket {
+    width: 5px;
+    height: 16px;
+    border: 1px solid var(--black);
+  }
+  .logo-bracket.left { border-right: none; }
+  .logo-bracket.right { border-left: none; }
+  .logo-text {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .lang-toggle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: var(--gray-mid);
+  }
+  .lang-btn {
+    cursor: pointer;
+    color: var(--gray-mid);
+  }
+  .lang-btn.active {
+    color: var(--black);
+    font-weight: 500;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 72px 0 96px;
+  }
+  .hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    line-height: 1.12;
+    max-width: 13ch;
+    margin-bottom: 28px;
+  }
+  .hero .sub {
+    font-size: 18px;
+    color: var(--gray-mid);
+    max-width: 44ch;
+    margin-bottom: 40px;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: var(--black);
+    color: var(--white);
+    text-decoration: none;
+    padding: 15px 30px;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    transition: opacity 0.15s ease;
+  }
+  .cta-btn:hover { opacity: 0.82; }
+  .cta-btn.secondary {
+    background: transparent;
+    color: var(--black);
+    border: 1px solid var(--black);
+  }
+
+  /* ---------- Trust line ---------- */
+  .trust {
+    padding: 32px 0;
+    border-top: 1px solid var(--gray-line);
+    border-bottom: 1px solid var(--gray-line);
+  }
+  .trust p {
+    font-size: 15px;
+    color: var(--gray-mid);
+  }
+
+  /* ---------- Leistung ---------- */
+  .service h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  .service .intro {
+    font-size: 17px;
+    color: var(--gray-mid);
+    max-width: 52ch;
+    margin-bottom: 44px;
+  }
+  .feature-list {
+    list-style: none;
+    display: grid;
+    gap: 14px;
+    margin-bottom: 56px;
+  }
+  .feature-list li {
+    font-size: 15px;
+    padding: 6px 0 6px 22px;
+    position: relative;
+  }
+  .feature-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--gray-mid);
+  }
+
+  .price-block {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+  .price-item .eyebrow { margin-bottom: 6px; }
+  .price-item .amount {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.8rem;
+  }
+  .bundle-note {
+    margin-top: 10px;
+  }
+  .bundle-note .label {
+    display: block;
+    font-size: 12px;
+    color: var(--gray-mid);
+    margin-bottom: 3px;
+  }
+  .bundle-note .bundle-price {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--black);
+  }
+  .old-price { text-decoration: line-through; color: #ADADA8; font-size: 0.85rem; font-weight: 400; }
+
+  @media (min-width: 480px) {
+    .branding-prices .price-item:last-child {
+      border-left: 1px solid var(--gray-line);
+      padding-left: 24px;
+    }
+  }
+
+  /* ---------- Beispiele ---------- */
+  .examples h2 { font-size: 2rem; margin-bottom: 12px; }
+  .examples .intro {
+    color: var(--gray-mid);
+    max-width: 46ch;
+    margin-bottom: 40px;
+    font-size: 15px;
+  }
+  .example-grid {
+    display: grid;
+    gap: 8px;
+  }
+  .example-block { margin-top: 24px; }
+  .example-block:first-child { margin-top: 0; }
+  .example-card {
+    border: 1px solid var(--gray-line);
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .browser-bar {
+    height: 26px;
+    background: #E4E1DA;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0 10px;
+    flex-shrink: 0;
+  }
+  .browser-bar span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #C7C3BA;
+  }
+  .browser-bar.dark { background: #2A2926; }
+  .browser-bar.dark span { background: #444240; }
+  .card-body { flex: 1; display: flex; flex-direction: column; }
+  .example-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--gray-mid);
+  }
+  .example-label .tag {
+    background: var(--gray-faint);
+    padding: 3px 8px;
+    border-radius: 3px;
+  }
+
+  /* --- Mockup: Handwerksbetrieb (echtes Bild) --- */
+  .mockup-img {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* --- Mockup: Kosmetikfirma (echtes Bild) --- */
+  /* siehe .mockup-img oben, gleiche Darstellung */
+
+  /* --- nael.agency Karte --- */
+  .example-card.live {
+    text-decoration: none;
+    background: #0A0A0A;
+  }
+  .mockup-nael {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .mockup-nael .brand {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    color: #FAFAF8;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    letter-spacing: -0.01em;
+  }
+  .mockup-nael .visit {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #8A8A85;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .example-card.live:hover .visit { color: #DEDEDA; }
+
+  /* ---------- Einführungspreis ---------- */
+  .intro-offer {
+    background: var(--black);
+    color: var(--white);
+  }
+  .intro-offer h2 {
+    font-size: 1.9rem;
+    margin-bottom: 20px;
+    color: var(--white);
+  }
+  .intro-offer p {
+    color: #CFCFCA;
+    max-width: 52ch;
+    margin-bottom: 32px;
+    font-size: 16px;
+  }
+  .intro-offer .price-line {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .intro-offer .price-line .old {
+    color: #8A8A85;
+    text-decoration: line-through;
+    font-size: 16px;
+  }
+  .intro-offer .price-line .new {
+    font-family: 'Manrope', sans-serif;
+    font-size: 2.2rem;
+  }
+  .intro-offer .note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: #A8A8A3;
+    margin-top: 20px;
+  }
+
+  /* ---------- Branding ---------- */
+  .branding h2 { font-size: 1.9rem; margin-bottom: 20px; }
+  .branding p {
+    color: var(--gray-mid);
+    max-width: 50ch;
+    margin-bottom: 32px;
+  }
+  .branding .price-block .amount { font-size: 1.5rem; }
+
+  /* ---------- Ablauf ---------- */
+  .process h2 { font-size: 1.9rem; margin-bottom: 44px; }
+  .process-list {
+    list-style: none;
+    counter-reset: step;
+    display: grid;
+    gap: 28px;
+  }
+  .process-list li {
+    counter-increment: step;
+    display: flex;
+    gap: 20px;
+    align-items: baseline;
+  }
+  .process-list li::before {
+    content: counter(step, decimal-leading-zero);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--gray-mid);
+    flex-shrink: 0;
+  }
+
+  /* ---------- Formular ---------- */
+  .contact h2 { font-size: 2rem; margin-bottom: 16px; }
+  .contact .intro {
+    color: var(--gray-mid);
+    max-width: 48ch;
+    margin-bottom: 40px;
+  }
+  form {
+    display: grid;
+    gap: 22px;
+  }
+  .field label {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+    margin-bottom: 8px;
+  }
+  .field input:not([type="radio"]):not([type="checkbox"]),
+  .field textarea,
+  .field select {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--gray-line);
+    background: transparent;
+    padding: 10px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: var(--black);
+  }
+  .field input:not([type="radio"]):not([type="checkbox"]):focus,
+  .field textarea:focus,
+  .field select:focus {
+    outline: none;
+    border-bottom-color: var(--black);
+  }
+  .field textarea { resize: vertical; min-height: 80px; }
+  .radio-group {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding-top: 4px;
+  }
+  .radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--black);
+    cursor: pointer;
+  }
+  .radio-group input[type="radio"] {
+    width: auto;
+    margin: 0;
+    accent-color: var(--black);
+    cursor: pointer;
+  }
+  form button {
+    justify-self: start;
+    margin-top: 8px;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    padding: 16px 34px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+  }
+  form button:hover { opacity: 0.82; }
+
+  .form-status {
+    font-size: 14px;
+    color: var(--gray-mid);
+    display: none;
+  }
+  .form-status.show { display: block; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    padding: 40px 0;
+    border-top: 1px solid var(--gray-line);
+  }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  footer p, footer a {
+    font-size: 13px;
+    color: var(--gray-mid);
+    text-decoration: none;
+  }
+  footer .links { display: flex; gap: 20px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">
+      <span class="logo-bracket left"></span>
+      <span class="logo-text">Cle<span style="text-transform:none;">Λ</span>nfr<span style="text-transform:none;">Λ</span>me</span>
+      <span class="logo-bracket right"></span>
+    </div>
+    <div class="lang-toggle">
+      <span class="lang-btn active" data-lang="de">DE</span>&nbsp;&nbsp;/&nbsp;&nbsp;<span class="lang-btn" data-lang="en">EN</span>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1 id="i18n-heroTitle">Eine professionelle Website, die zu Ihrem Unternehmen passt.</h1>
+    <p class="sub" id="i18n-heroSub">Klar gestaltet. Zeitgemäss. Responsive. Ohne unnötigen Aufwand.</p>
+    <a href="#anfrage" class="cta-btn" id="i18n-heroCta">Website anfragen</a>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <p id="i18n-trustText">Webdesign mit <strong style="font-weight:700; color:var(--black);">jahrelanger Erfahrung im Grafikdesign</strong>. Für Unternehmen, die online professionell auftreten wollen.</p>
+  </div>
+</div>
+
+<section class="intro-offer">
+  <div class="wrap">
+    <p class="eyebrow" style="color:#A8A8A3; margin-bottom:14px;" id="i18n-introEyebrow">Aktuelle Projektplätze</p>
+    <h2 id="i18n-introTitle">Einführungspreis für die ersten 5 Projekte</h2>
+    <p id="i18n-introText">Für eine begrenzte Anzahl neuer Projekte bieten wir derzeit einen reduzierten Einführungspreis an. Im Gegenzug zeigen wir das fertige Projekt als Referenz und bitten um ein kurzes Testimonial nach Abschluss.</p>
+    <div class="price-line">
+      <span class="old">500 CHF</span>
+      <span class="new">250 CHF</span>
+      <span style="color:#A8A8A3; font-size:15px;">One-Pager</span>
+    </div>
+    <p class="note" id="i18n-introNote">Nur der One-Pager ist im Einführungspreis enthalten. Für einen größeren Umfang gilt der reguläre Preis.</p>
+  </div>
+</section>
+
+<section class="service">
+  <div class="wrap">
+    <p class="eyebrow" style="margin-bottom:14px;" id="i18n-serviceEyebrow">Leistung</p>
+    <h2 id="i18n-serviceTitle">Ihre Website. Klar. Professionell. Fertig.</h2>
+    <p class="intro" id="i18n-serviceIntro">Wir entwickeln Websites, die zu Ihrem Unternehmen passen. Zeitgemäss und professionell, ohne komplizierte Prozesse und ohne unnötige Extras. Von der ersten Gestaltung bis zur fertigen Veröffentlichung übernehmen wir den kompletten Aufbau.</p>
+
+    <ul class="feature-list" id="i18n-featureList">
+      <li>Professionelles Webdesign, abgestimmt auf Ihr Unternehmen</li>
+      <li>Responsive Darstellung für Smartphone, Tablet und Desktop</li>
+      <li>Klare Seitenstruktur und verständliche Nutzerführung</li>
+      <li>Kontaktmöglichkeiten und relevante Verlinkungen</li>
+      <li>Grundlegende SEO-Struktur</li>
+      <li>Veröffentlichung Ihrer fertigen Website</li>
+    </ul>
+
+    <div class="price-block">
+      <div class="price-item">
+        <p class="eyebrow">One-Pager</p>
+        <p class="amount">ab 500 CHF</p>
+      </div>
+      <div class="price-item">
+        <p class="eyebrow" id="i18n-priceLabelMulti">Mehrseitige Website</p>
+        <p class="amount">ab 700 CHF</p>
+      </div>
+      <div class="price-item">
+        <p class="eyebrow" id="i18n-priceLabelCare">Laufende Betreuung</p>
+        <p class="amount">ab 100 CHF<span style="font-size:0.9rem; font-weight:400; color:var(--gray-mid);">/Monat</span></p>
+      </div>
+    </div>
+    <p style="color:var(--gray-mid); font-size:13px; margin-top:14px;" id="i18n-serviceNote">Die laufende Betreuung umfasst Hosting, technische Updates und kleinere Textanpassungen. Der Preis richtet sich nach Umfang und Komplexität Ihrer Website. Bei jährlicher Zahlung erhalten Sie 2 Monate geschenkt.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="examples">
+  <div class="wrap">
+    <p class="eyebrow" style="margin-bottom:14px;" id="i18n-examplesEyebrow">Beispiele</p>
+    <h2 id="i18n-examplesTitle">Beispiele unserer Arbeit</h2>
+    <p class="intro" id="i18n-examplesIntro">Hier könnte auch Ihre Website erscheinen.</p>
+    <div class="example-grid">
+
+      <div class="example-block">
+        <a href="https://nael.agency" target="_blank" rel="noopener" class="example-card live">
+          <div class="browser-bar dark"><span></span><span></span><span></span></div>
+          <div class="mockup-nael">
+            <div class="brand">nael.agency</div>
+            <div class="visit">nael.agency ↗</div>
+          </div>
+        </a>
+        <p class="example-label"><span>Design &amp; Branding</span><span class="tag">live</span></p>
+      </div>
+
+      <div class="example-block">
+        <div class="example-card">
+          <div class="browser-bar dark"><span></span><span></span><span></span></div>
+          <img class="mockup-img" src="images/handwerk-mockup.png" alt="Website-Beispiel für einen Handwerksbetrieb">
+        </div>
+        <p class="example-label"><span id="i18n-exampleHandwerk">Beispiel: Handwerksbetrieb</span><span class="tag">Mockup</span></p>
+      </div>
+
+      <div class="example-block">
+        <div class="example-card">
+          <div class="browser-bar"><span></span><span></span><span></span></div>
+          <img class="mockup-img" src="images/kosmetik-mockup.png" alt="Website-Beispiel für eine Kosmetikmarke">
+        </div>
+        <p class="example-label"><span id="i18n-exampleKosmetik">Beispiel: Kosmetikmarke</span><span class="tag">Mockup</span></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="branding">
+  <div class="wrap">
+    <p class="eyebrow" style="margin-bottom:14px;" id="i18n-brandingEyebrow">Zusatzangebot</p>
+    <h2 id="i18n-brandingTitle">Sie brauchen mehr als eine Website?</h2>
+    <p id="i18n-brandingText">Wenn Ihr bestehender Auftritt nicht mehr zu Ihrem Unternehmen passt, überarbeiten wir auf Wunsch Logo, Farben und Typografie. Oder entwickeln ein komplett neues visuelles Erscheinungsbild.</p>
+    <div class="price-block branding-prices">
+      <div class="price-item">
+        <p class="eyebrow" id="i18n-logoLabel">Logo-Auffrischung</p>
+        <p class="amount">ab 150 CHF</p>
+        <p class="bundle-note" id="i18n-bundle1"><span class="label">Im Bundle mit One-Pager</span><span class="bundle-price">ab 600 CHF</span> <span class="old-price">statt 650 CHF</span></p>
+      </div>
+      <div class="price-item">
+        <p class="eyebrow" id="i18n-brandingLabel">Neues Branding</p>
+        <p class="amount">ab 450 CHF</p>
+        <p class="bundle-note" id="i18n-bundle2"><span class="label">Im Bundle mit One-Pager</span><span class="bundle-price">ab 850 CHF</span> <span class="old-price">statt 950 CHF</span></p>
+      </div>
+    </div>
+    <p style="color:var(--gray-mid); font-size:13px; margin-top:16px;" id="i18n-brandingFootnote">Bei mehrseitigen Websites oder umfangreicherem Branding erstellen wir Ihnen ein individuelles Bundle-Angebot.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="process">
+  <div class="wrap">
+    <p class="eyebrow" style="margin-bottom:14px;" id="i18n-processEyebrow">Ablauf</p>
+    <h2 id="i18n-processTitle">So einfach geht's</h2>
+    <ol class="process-list" id="i18n-processList">
+      <li>Anfrage senden – mit Angaben zu bestehender Website und Wünschen</li>
+      <li>Rückfragen bei Bedarf, danach passendes Angebot von uns</li>
+      <li>Gestaltung eines ersten Entwurfs</li>
+      <li>Bis zu 2 Korrekturrunden: Sie geben Feedback, wir passen an</li>
+      <li>Veröffentlichung nach Ihrer Freigabe</li>
+    </ol>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="contact" id="anfrage">
+  <div class="wrap">
+    <p class="eyebrow" style="margin-bottom:14px;" id="i18n-contactEyebrow">Anfrage</p>
+    <h2 id="i18n-contactTitle">Sie brauchen eine neue Website?</h2>
+    <p class="intro" id="i18n-contactIntro">Schreiben Sie uns kurz, was Sie benötigen. Wir melden uns mit einer Einschätzung und dem passenden Angebot. Oder direkt per E-Mail: <a href="mailto:hello@cleanframe.ch" style="color:var(--black); text-decoration:underline;">hello@cleanframe.ch</a></p>
+
+    <form id="requestForm" action="https://formspree.io/f/xvkoodpv" method="POST">
+      <div class="field">
+        <label for="name" id="i18n-labelName">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="field">
+        <label for="company" id="i18n-labelCompany">Unternehmen</label>
+        <input type="text" id="company" name="company" required>
+      </div>
+      <div class="field">
+        <label for="email" id="i18n-labelEmail">E-Mail</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="field">
+        <label for="existing" id="i18n-labelExisting">Website vorhanden?</label>
+        <input type="text" id="existing" name="existing" placeholder="Link zur bestehenden Website">
+      </div>
+      <div class="field">
+        <label for="goal" id="i18n-labelGoal">Was soll die neue Website leisten?</label>
+        <textarea id="goal" name="goal"></textarea>
+      </div>
+      <div class="field">
+        <label id="i18n-labelScope">Gewünschter Umfang</label>
+        <div class="radio-group">
+          <label><input type="radio" name="scope" value="one-pager" checked> One-Pager</label>
+          <label><input type="radio" name="scope" value="multi"> <span id="i18n-scopeMulti">Mehrere Seiten</span></label>
+          <label><input type="radio" name="scope" value="unsure"> <span id="i18n-scopeUnsure">Noch nicht sicher</span></label>
+        </div>
+      </div>
+      <button type="submit" id="i18n-submitBtn">Anfrage senden</button>
+      <p class="form-status" id="formStatus">Danke für Ihre Anfrage. Wir melden uns in Kürze bei Ihnen.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Cleanframe</p>
+    <div class="links">
+      <a href="mailto:hello@cleanframe.ch">hello@cleanframe.ch</a>
+      <a href="impressum.html" id="i18n-impressumLink">Impressum</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('requestForm');
+  const status = document.getElementById('formStatus');
+
+  const statusMessages = {
+    de: {
+      success: 'Danke für Ihre Anfrage. Wir melden uns in Kürze bei Ihnen.',
+      error: 'Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt per E-Mail.'
+    },
+    en: {
+      success: 'Thank you for your enquiry. We will get back to you shortly.',
+      error: 'There was a problem sending your message. Please try again or email us directly.'
+    }
+  };
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        status.textContent = statusMessages[lang].success;
+        status.classList.add('show');
+        form.reset();
+      } else {
+        status.textContent = statusMessages[lang].error;
+        status.classList.add('show');
+      }
+    } catch (error) {
+      status.textContent = statusMessages[lang].error;
+      status.classList.add('show');
+    }
+  });
+
+  // ---------- Sprachumschalter ----------
+  const translations = {
+    heroTitle: { en: "A professional website that fits your business." },
+    heroSub: { en: "Clearly designed. Contemporary. Responsive. Without unnecessary effort." },
+    heroCta: { en: "Request a website" },
+    trustText: { en: 'Web design with <strong style="font-weight:700; color:var(--black);">years of experience in graphic design</strong>. For businesses that want a professional online presence.' },
+    introEyebrow: { en: "Current project slots" },
+    introTitle: { en: "Introductory price for the first 5 projects" },
+    introText: { en: "For a limited number of new projects, we currently offer a reduced introductory price. In return, we showcase the finished project as a reference and ask for a short testimonial afterwards." },
+    introNote: { en: "Only the one-page site is included at the introductory price. The regular price applies for a larger scope." },
+    serviceEyebrow: { en: "Service" },
+    serviceTitle: { en: "Your website. Clear. Professional. Done." },
+    serviceIntro: { en: "We build websites that fit your business. Contemporary and professional, without complicated processes or unnecessary extras. From the first design to the finished, published site, we handle the entire build." },
+    featureList: { en: [
+      "Professional web design, tailored to your business",
+      "Responsive display for smartphone, tablet and desktop",
+      "Clear page structure and intuitive navigation",
+      "Contact options and relevant links",
+      "Basic SEO structure",
+      "Publishing of your finished website"
+    ]},
+    priceLabelMulti: { en: "Multi-page website" },
+    priceLabelCare: { en: "Ongoing maintenance" },
+    serviceNote: { en: "Ongoing maintenance includes hosting, technical updates and minor text changes. The price depends on the scope and complexity of your website. Pay annually and get 2 months free." },
+    examplesEyebrow: { en: "Examples" },
+    examplesTitle: { en: "Examples of our work" },
+    examplesIntro: { en: "Your website could be featured here too." },
+    exampleHandwerk: { en: "Example: Construction business" },
+    exampleKosmetik: { en: "Example: Cosmetics brand" },
+    brandingEyebrow: { en: "Add-on" },
+    brandingTitle: { en: "Need more than a website?" },
+    brandingText: { en: "If your current visual identity no longer fits your business, we can refresh your logo, colours and typography, or develop a completely new visual identity." },
+    logoLabel: { en: "Logo refresh" },
+    brandingLabel: { en: "New branding" },
+    bundle1: { en: '<span class="label">Bundled with one-pager</span><span class="bundle-price">from CHF 600</span> <span class="old-price">instead of CHF 650</span>' },
+    bundle2: { en: '<span class="label">Bundled with one-pager</span><span class="bundle-price">from CHF 850</span> <span class="old-price">instead of CHF 950</span>' },
+    brandingFootnote: { en: "For multi-page websites or more extensive branding work, we put together an individual bundle offer." },
+    processEyebrow: { en: "Process" },
+    processTitle: { en: "How it works" },
+    processList: { en: [
+      "Send your enquiry – with details on your current website and goals",
+      "We ask follow-up questions if needed, then send you a tailored offer",
+      "We design a first draft",
+      "Up to 2 rounds of revisions: you give feedback, we make adjustments",
+      "Publishing once you give final approval"
+    ]},
+    contactEyebrow: { en: "Enquiry" },
+    contactTitle: { en: "Need a new website?" },
+    contactIntro: { en: 'Send us a short message about what you need. We will get back to you with an assessment and a tailored offer. Or email us directly: <a href="mailto:hello@cleanframe.ch" style="color:var(--black); text-decoration:underline;">hello@cleanframe.ch</a>' },
+    labelName: { en: "Name" },
+    labelCompany: { en: "Company" },
+    labelEmail: { en: "Email" },
+    labelExisting: { en: "Existing website?" },
+    labelGoal: { en: "What should the new website achieve?" },
+    labelScope: { en: "Desired scope" },
+    scopeMulti: { en: "Multiple pages" },
+    scopeUnsure: { en: "Not sure yet" },
+    submitBtn: { en: "Send request" },
+    impressumLink: { en: "Legal Notice" }
+  };
+
+  const germanOriginals = {};
+
+  function applyLanguage(lang) {
+    document.documentElement.lang = lang;
+
+    for (const key in translations) {
+      const el = document.getElementById('i18n-' + key);
+      if (!el) continue;
+
+      if (!(key in germanOriginals)) {
+        if (el.tagName === 'UL' || el.tagName === 'OL') {
+          germanOriginals[key] = Array.from(el.children).map(li => li.innerHTML);
+        } else {
+          germanOriginals[key] = el.innerHTML;
+        }
+      }
+
+      if (lang === 'en') {
+        if (el.tagName === 'UL' || el.tagName === 'OL') {
+          const items = el.children;
+          translations[key].en.forEach((text, i) => {
+            if (items[i]) items[i].innerHTML = text;
+          });
+        } else {
+          el.innerHTML = translations[key].en;
+        }
+      } else {
+        if (el.tagName === 'UL' || el.tagName === 'OL') {
+          const items = el.children;
+          germanOriginals[key].forEach((text, i) => {
+            if (items[i]) items[i].innerHTML = text;
+          });
+        } else {
+          el.innerHTML = germanOriginals[key];
+        }
+      }
+    }
+
+    // Formular-Platzhalter
+    const existingInput = document.getElementById('existing');
+    if (existingInput) {
+      existingInput.placeholder = lang === 'en' ? 'Link to existing website' : 'Link zur bestehenden Website';
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+  });
+
+  // ---------- Automatische Spracherkennung beim ersten Laden ----------
+  (function detectInitialLanguage() {
+    const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    // Deutsch bleibt Deutsch (de, de-CH, de-AT, de-DE ...). Alles andere startet auf Englisch.
+    if (!browserLang.startsWith('de')) {
+      applyLanguage('en');
+    }
+  })();
+</script>
+
+</body>
+</html>
